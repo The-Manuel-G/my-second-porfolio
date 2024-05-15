@@ -1,0 +1,98 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import ToogleDarkBtn from "../components/ToggleDarkBtn.astro";
+import Footer from "../components/Footer.astro";
+import DarkBg from "../components/DarkBg.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BtnToTop from "../components/BtnToTop.astro";
+import {googleData} from "../data/Google.js";
+import { skillIcons } from "../data/skillsIcons";
+import "../styles/portfolio.css";
+import NavSecundary from "../components/Navs/NavSecundary.astro";
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<NavSecundary/>
+		<ToogleDarkBtn />
+		<BtnToTop />
+		<main>
+			<section class="portfolio__padre">
+				<div class="cards__container">
+					
+					{ 
+						googleData.map((data) => (
+							<div class="portafolio__tarjeta">
+								<div class="portafolio__cara faceA card__content caja__dark__portafolio ">
+									<div class="img__container">
+										<img
+											class={`portafolio__img`}
+											src={data.imgSrc}
+											alt={data.titulo}
+										/>
+									</div>
+									<div class="container__info">
+										<h3 class="portafolio__subtitulo titulo__dark">
+											{data.titulo}
+										</h3>
+									
+									</div>
+								</div>
+								<div class="portafolio__cara faceB  caja__dark__portafolio">
+									<p class="portafolio__descripcion titulo__dark">
+										{data.descripcion}
+									</p>
+									<div class="portafolio__botobnes">
+										<a
+											class="portafolio__btn boton titulo__dark"
+											href={data.CredenURL}
+											target="_self"
+											rel="nofollow noreferrer noopener">
+											<span data-section="proyecto" data-value="demo">
+												Credential
+												
+											</span>
+										</a>
+										<a
+											class="portafolio__btn boton titulo__dark"
+											href={data.infoURL}
+											target="_self"
+											rel="nofollow noreferrer noopener">
+											<span data-section="proyecto" data-value="repo">
+                                                Courses
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+					
+						))
+					}   
+				</div>
+			</section>
+		</main>
+		<DarkBg />
+		<Footer />
+		<style>
+			.portfolio__padre {
+				width: 100%;
+				padding: 16rem 1rem 10rem ;
+				backdrop-filter: blur(6px);
+
+			}
+			.cards__container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				height: auto;
+				gap: 3rem;
+			}
+		</style>
+	</body>
+</html>

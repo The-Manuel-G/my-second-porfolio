@@ -1,0 +1,50 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import "../styles/global.css";
+import "../styles/about-section.css";
+import ToggleDarkBtn from "../components/ToggleDarkBtn.astro";
+import Footer from "../components/Footer.astro";
+import NavSecundary from "../components/Navs/NavSecundary.astro";
+import BtnToTop from "../components/BtnToTop.astro";
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <ToggleDarkBtn />
+    <NavSecundary />
+    <BtnToTop />
+    <main>
+      <section class="section__about">
+        <img
+          class="about__profile"
+          src="../img/formal3.jpg"
+          alt="TheManuel picture"
+        />
+        <aside class="about__text">
+          <slot />
+        </aside>
+      </section>
+    </main>
+    <Footer />
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+    <script>
+      import { Modal } from 'flowbite'
+    
+      // select the two elements that we'll work with
+      const $buttonElement: HTMLElement | null = document.querySelector('#button');
+      const $modalElement: HTMLElement | null = document.querySelector('#defaultModal');
+    
+      // create a new modal component
+      const modal = new Modal($modalElement);
+    
+      // toggle the visibility of the modal when clicking on the button
+      if ($buttonElement) {
+        $buttonElement.addEventListener('click', () => modal.toggle());
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+---
+import "../styles/components/about-home.css";
+import Button from "./Button.astro";
+import CardTerminal from "../layouts/CardTerminal.astro";
+import CardAbout from "./CardAbout.astro";
+import TitleSpan from "./TitleSpan.astro";
+
+---
+
+<section class="about" id="about">
+	<TitleSpan text1="Who is  " span=" Ariel" text2="?" />
+	<div class="about__container">
+		<CardAbout />
+		<div class="terminal__container">
+			<CardTerminal>
+				<h3 class="terminal__content terminal__content--h3">≥ Ariel Naranjo </h3>
+				<p class="terminal__content terminal__content--p">≥ Soy un Desarrollador de software .</p>
+
+				<h3 class="terminal__content terminal__content--h3">
+					≥ ¿Que  <span class="terminal__content terminal__content--span span__dark">me distingue?</span>
+				</h3>
+				<p class="terminal__content terminal__content--p">
+					≥  <span class="terminal__content--span span__dark">	¡Realmente me gusta  lo que hago! 💙</span> I
+				 Mis conocimientos de programación combinan UX y Análisis y diseño. Centrado en el usuario me ayuda a crear soluciones más innovadoras para el usuario. <span class="terminal__content--span span__dark">
+				</p>
+				<div class="about__contactar">
+					<Button href="/about" text="See more" />
+				</div>
+			</CardTerminal>
+		</div>
+		
+	</div>
+</section>

@@ -1,0 +1,47 @@
+---
+import { proyectData } from "../data/Certification";
+import { skillIcons } from "../data/skillsIcons";
+import "../styles/portfolio.css";
+---
+
+
+{
+	proyectData.slice(0,3).map((data) => (
+		<div class="portafolio__tarjeta">
+			<div class="portafolio__cara faceA card__content caja__dark__portafolio ">
+				<div class="img__container">
+					<img class={`portafolio__img`} src={data.imgSrc} alt={data.titulo} />
+				</div>
+				<div class="container__info">
+					<h3 class="portafolio__subtitulo titulo__dark">{data.titulo}</h3>
+					
+				</div>
+			</div>
+			<div class="portafolio__cara faceB  caja__dark__portafolio">
+				<p class="portafolio__descripcion titulo__dark">{data.descripcion}</p>
+				<div class="portafolio__botobnes">
+					<a
+						class="portafolio__btn boton titulo__dark"
+					
+						href={data.CredenURL}
+						target="_self"
+						rel="nofollow noreferrer noopener">
+						<span data-section="portafolio" data-value="demo">
+						     Credentials
+						</span>
+					</a>
+					<a
+						class="portafolio__btn boton titulo__dark"
+						href={data.infoURL}
+						target="_self"
+						rel="nofollow noreferrer noopener">
+						<span data-section="portafolio" data-value="repo">
+							INFO
+						</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+	))
+}

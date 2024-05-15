@@ -1,0 +1,119 @@
+@import url("../animations/animation-up-down.css");
+.button {
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #0080ff;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 8px;
+    width: 57px;
+    height: 57px;
+  
+    cursor: pointer;
+    margin: 5px;
+    
+  }
+
+  
+  .icon_copy{
+      
+      cursor: pointer;
+      color: white;
+      font-size: 3rem; 
+   
+    }
+  
+  
+  
+  
+  .inlineblock{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  }
+  
+  
+  .button, .icon_copy{
+    vertical-align: middle;
+  }
+    .email_contact{
+      border-radius: 10%;
+      display: flex;
+      font-size: 1.7rem;
+      width: 100%;
+      max-width: 27rem;
+      margin-top: 20px;
+      padding: 10px 4px;
+      align-items: center;
+      height: 6rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 40px;
+  
+      
+      font-weight: 660;
+      cursor: none;
+      gap: 1rem;
+    }
+    .post {
+      background-color: black;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .post__container {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      width: 100%;
+    }
+    .post__titulo {
+      display: flex;
+      font-size: 3.5rem;
+      margin: 0;
+      gap: 1rem;
+      padding-bottom: 2rem;
+      color: var(--seccond-color);
+      justify-content: center;
+    }
+  
+    .post__titulo span {
+      color: #01f2ff;
+      filter: drop-shadow(0px 0px 4px rgb(0,0,0));
+      text-shadow: -2px 3px 5px black;
+    }
+    .post__titulo span:hover {
+      color: var(--blue);
+    }
+    .img__post {
+      width: 600px;
+      height:530px; ;
+      object-fit: cover;
+    }
+  
+    @media screen and (min-width: 768px) {
+      .post__container {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 80%;
+      }
+      .container__terminal {
+        width: 65rem;
+      }
+      .post__titulo {
+        display: flex;
+        font-size: 4rem;
+        margin: 0;
+        gap: 2rem;
+        padding-bottom: 2rem;
+        color: var(--seccond-color);
+      }
+    }
+  
